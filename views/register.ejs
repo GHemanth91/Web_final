@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Registration</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1 class="bank-logo">MyBank</h1>
+        <p class="form-title">Registration Form</p>
+    </div>
+
+    <!-- Registration Form Container -->
+    <div class="register-container">
+        <div class="register-box">
+            <form action="/register" method="POST">
+                
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </fieldset>
+
+                <!-- Address Information -->
+                <fieldset>
+                    <legend>Address Information</legend>
+
+                    <div class="input-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group col-md-6">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="input-group col-md-6">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Account Security -->
+                <fieldset>
+                    <legend>Account Security</legend>
+
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                </fieldset>
+
+                <!-- Account Type -->
+                <fieldset>
+                    <legend>Account Type</legend>
+
+                    <div class="form-check">
+                        <input type="radio" id="checking" name="accountType" value="Checking" required>
+                        <label for="checking">Checking Account</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="radio" id="savings" name="accountType" value="Savings" required>
+                        <label for="savings">Savings Account</label>
+                    </div>
+                </fieldset>
+
+                <!-- Terms and Conditions -->
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-register">Register</button>
+
+                <!-- Already have an account -->
+                <p class="login-link">Already have an account? <a href="/login">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

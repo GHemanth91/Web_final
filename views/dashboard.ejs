@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E(xpress)-Bank Dashboard</title>
+    <!-- Bootstrap CSS from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="bank-logo">E(xpress)-Bank</div>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="/transfer"><i class="fas fa-exchange-alt"></i> Transfers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-credit-card"></i> Cards</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-pie"></i> Investments</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li class="nav-item mt-5"><a class="nav-link text-danger" id="logoutButton" onclick="logout()"> <i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header d-flex justify-content-between align-items-center">
+            <h2>Welcome back, <span id="userName"><%- user %></span>!</h2>
+            <div class="profile-icon" id="profileInitials">U</div>
+        </div>
+
+        <!-- Financial Overview -->
+        <div class="financial-overview">
+            <div class="account-summary">
+                <h5>Your Accounts</h5>
+                <div id="accountsContainer"></div>
+            </div>
+            <div class="stats">
+                <h5>Financial Summary</h5>
+                <div class="stats-container">
+                    <div class="stats-card">Monthly Spending: $1,245.62</div>
+                    <div class="stats-card">Monthly Income: $3,850.00</div>
+                    <div class="stats-card">Savings Goal: 78% Complete</div>
+                    <div class="stats-card">Credit Score: 760</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="recent-transactions">
+            <h5>Recent Transactions</h5>
+            <div class="transaction-list" id="transactionsList"></div>
+        </div>
+    </div>
+
+    <!-- Quick Action Button -->
+    <div class="quick-actions">
+        <button class="quick-action-btn" onclick="openActions()">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Dashboard Script -->
+    <script src="/js/dashboard.cjs"></script>
+    <script>
+        async function logout() {
+            try {
+                const response = await fetch("/auth/logout", { method: "POST", headers: { "Content-Type": "application/json" }});
+                if (response.ok) { window.location.href = "/login"; }
+            } catch (error) {
+                console.error("Logout failed", error);
+                window.location.href = "/login";
+            }
+        }
+    </script>
+</body>
+
+</html>
