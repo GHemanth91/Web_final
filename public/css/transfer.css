@@ -1,0 +1,55 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    background: #343a40;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar .bank-logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-link {
+    color: #adb5bd;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background-color: #495057;
+    border-radius: 5px;
+    color: white;
+}
+
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.transaction-list {
+    max-height: 200px;
+    overflow-y: auto;
+}

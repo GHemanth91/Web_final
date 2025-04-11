@@ -1,0 +1,77 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #b3e5fc, #0288d1); /* Blue gradient */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #0a2940; /* Dark navy */
+    color: white;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #fefefe;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #1e3a56;
+}
+
+/* Logout */
+.logout {
+    color: red;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* Account Section */
+.account-section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Financial Summary */
+.summary-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
